@@ -29,7 +29,7 @@ public class TestSqlSession {
 		List<MemberVO> memberList
 		= session.selectList("Member-Mapper.selectMemberList");
 		
-		Assert.assertEquals(memberList.size(),3);
+		Assert.assertEquals(memberList.size(),2);
 	}
 
 	@Test
@@ -50,7 +50,7 @@ public class TestSqlSession {
 		mockMember.setMem_email("kaka@naver.com");
 		mockMember.setMem_phone("010-1234-1347");
 		mockMember.setMem_auth(Arrays.asList("student"));
-//		mockMember.setPicture("noImage.jpg");
+		mockMember.setMem_add("대전ww아카데미");
 		mockMember.setMem_name("kim");
 		
 		session.insert("Member-Mapper.insertMember",mockMember);
